@@ -1,0 +1,55 @@
+{
+  "name": "hexbit/sage-woocommerce",
+  "description": "Woocommerce support for sage 10",
+  "version": "1.0.0",
+  "keywords": [
+    "hexbit",
+    "smarteist",
+    "wordpress",
+    "sage",
+    "woocommerce",
+    "blade"
+  ],
+  "homepage": "https://github.com/smarteist/sage-woocommerce",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Ali Hosseini",
+      "email": "ali.hosseini.sr@gmail.com",
+      "homepage": "https://hexbit.dev/",
+      "role": "Developer"
+    }
+  ],
+  "require": {
+    "php": "^7.2",
+    "roots/acorn": "*"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^6.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "Hexbit\\Woocommerce\\": "src"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Hexbit\\Woocommerce\\Tests\\": "tests"
+    }
+  },
+  "scripts": {
+    "test": "vendor/bin/phpunit"
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true,
+  "config": {
+    "sort-packages": true
+  },
+  "extra": {
+    "acorn": {
+      "providers": [
+        "Hexbit\\Woocommerce\\Providers\\WooCommerceServiceProvider"
+      ]
+    }
+  }
+}
