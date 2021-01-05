@@ -38,7 +38,7 @@ class WooCommerceServiceProvider extends ServiceProvider
         // publishing command
         $this->publishes([
             dirname(__DIR__) . '/Publishes/app/woocommerce.php' => $this->app->path('woocommerce.php'),
-            dirname(__DIR__) . '/Publishes/resources/views' => $this->app->resourcePath('views'),
+            dirname(__DIR__) . '/Publishes/resources/views/woocommerce' => $this->app->resourcePath('views/woocommerce'),
         ], 'woocommerce');
 
     }

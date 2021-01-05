@@ -109,13 +109,12 @@ class WooCommerce
      */
     public function getTemplate(string $template, string $templateName, array $args)
     {
-        $themeTemplate = $this->locateThemeTemplate($templateName);
-
         // return theme filename for status screen
         if (is_admin() &&
             !wp_doing_ajax() &&
             get_current_screen() &&
             get_current_screen()->id === 'woocommerce_page_wc-status') {
+            $themeTemplate = $this->locateThemeTemplate($templateName);
             return $themeTemplate ?: $template;
         }
 
