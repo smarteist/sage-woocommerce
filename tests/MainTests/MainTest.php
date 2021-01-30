@@ -5,7 +5,7 @@ namespace Hexbit\Woocommerce\Tests\MainTests;
 
 use Hexbit\Woocommerce\Tests\BaseTestCase;
 
-class MainTests extends BaseTestCase
+class MainTest extends BaseTestCase
 {
     protected function setUp(): void
     {
