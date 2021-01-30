@@ -3,7 +3,7 @@
 
 This package enables WooCommerce integration for Sage 10 themes and Blade templates.
 
-####Changelog
+#### Changelog
 - Issue #1 fixed, please change your view renderer to ```sage.woocommerce.view```.
 
 ## Installation
