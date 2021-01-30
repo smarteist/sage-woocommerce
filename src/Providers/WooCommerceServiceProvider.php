@@ -3,6 +3,7 @@
 namespace Hexbit\Woocommerce\Providers;
 
 use Hexbit\Woocommerce\WooCommerce;
+use Roots\Acorn\Application;
 use Roots\Acorn\ServiceProvider;
 
 
@@ -20,6 +21,9 @@ class WooCommerceServiceProvider extends ServiceProvider
     public function register()
     {
         $this->app->singleton('sage.woocommerce', WooCommerce::class);
+        $this->app->singleton('sage.woocommerce.view', function (Application $app) {
+            return strval($app['sage.woocommerce']);
+        });
     }
 
     /**

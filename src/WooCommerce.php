@@ -2,13 +2,12 @@
 
 namespace Hexbit\Woocommerce;
 
-use Illuminate\Contracts\Container\Container as ContainerContract;
+use Roots\Acorn\Application;
 use Roots\Acorn\Sage\ViewFinder;
 use Roots\Acorn\View\FileViewFinder;
 use Illuminate\Support\Str;
 use WC_Template_Loader;
 use function \Roots\view;
-use function \Roots\app;
 
 /**
  * Class WooCommerce
@@ -32,14 +31,14 @@ class WooCommerce
      */
     private $sageFinder;
     /**
-     * @var ContainerContract
+     * @var Application
      */
     private $app;
 
     public function __construct(
         ViewFinder $sageFinder,
         FileViewFinder $fileFinder,
-        ContainerContract $app
+        Application $app
     )
     {
         $this->app = $app;
@@ -58,7 +57,7 @@ class WooCommerce
         if ($this->woocommerceTemplate && realpath($this->woocommerceTemplate)) {
             return $this->fileFinder->getPossibleViewNameFromPath($this->woocommerceTemplate);
         }
-        return app('sage.view');
+        return $this->app['sage.view'];
     }
 
     /**

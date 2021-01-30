@@ -3,6 +3,9 @@
 
 This package enables WooCommerce integration for Sage 10 themes and Blade templates.
 
+####Changelog
+- Issue #1 fixed, please change your view renderer to ```sage.woocommerce.view```.
+
 ## Installation
 
 ```
@@ -43,7 +46,7 @@ wp acorn vendor:publish --tag="woocommerce"
 & finally change view renderer in your index file like this:
 
 ```
-<?php echo \Roots\view(\Roots\app('sage.woocommerce'), \Roots\app('sage.data'))->render(); ?>
+<?php echo \Roots\view(\Roots\app('sage.woocommerce.view'), \Roots\app('sage.data'))->render(); ?>
 ```
 
 
