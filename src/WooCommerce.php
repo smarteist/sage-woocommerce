@@ -140,14 +140,10 @@ class WooCommerce
             Str::endsWith($themeTemplate, '.blade.php') &&
             realpath($themeTemplate)
         ) {
-            // Gather data to be passed to view
-            $data = array_reduce(get_body_class(), function ($data, $class) use ($themeTemplate) {
-                return apply_filters("sage/template/{$class}/data", $data, $themeTemplate);
-            }, []);
             // We have a template, create a loader file and return it's path.
             return view(
                 $this->fileFinder->getPossibleViewNameFromPath($themeTemplate),
-                $data
+                $this->app['sage.data']
             )->makeLoader();
         }
 
