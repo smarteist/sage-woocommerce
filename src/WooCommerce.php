@@ -143,7 +143,7 @@ class WooCommerce
             // We have a template, create a loader file and return it's path.
             return view(
                 $this->fileFinder->getPossibleViewNameFromPath($themeTemplate),
-                $this->app['sage.data']
+                $this->app['sage.data'] ?? []
             )->makeLoader();
         }
 
