@@ -122,7 +122,6 @@ class WooCommerce
     }
 
     /**
-     * @hooked woocommerce_locate_template
      * @hooked wc_get_template_part
      * Filter all template parts that available in overrides and return our blade
      * template loaders as needed.
@@ -131,8 +130,20 @@ class WooCommerce
      */
     public function templatePart(string $template)
     {
+        return $this->locateTemplate($template, $template);
+    }
+
+    /**
+     * @hooked woocommerce_locate_template
+     * Filter all template parts that available in overrides and return our blade
+     * template loaders as needed.
+     * @param string $template part to find
+     * @return string loader output
+     */
+    public function locateTemplate(string $template, string $template_name)
+    {
         // Locate any matching template within the theme.
-        $themeTemplate = $this->locateThemeTemplate($template);
+        $themeTemplate = $this->locateThemeTemplate($template_name);
 
         // Include directly unless it's a blade file.
         if (
