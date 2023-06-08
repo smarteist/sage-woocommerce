@@ -1,3 +1,7 @@
+# MIGRATED TO [THIS LIBRARY](https://github.com/generoi/sage-woocommerce) 
+
+This library was developed when the problems of the mentioned library were not fixed and contributions were not allowed, but now, due to the possibility of contributions, use it.
+
 # Sage Woocommerce
 ![CI](https://travis-ci.org/smarteist/sage-woocommerce.svg?branch=master)
 
